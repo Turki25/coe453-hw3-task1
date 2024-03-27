@@ -1,0 +1,48 @@
+swagger: "2.0"
+info:
+  title: hw3_task1_api
+  description: my 1st GCP API, which perform basic arithmetic operations using Cloud Functions
+  version: 1.0.0
+
+host: hw3task1api.apigateway.coe453-hw3-201953450.cloud.goog
+basePath: /
+schemes:
+  - https
+
+paths:
+  /add:
+    post:
+      operationId: addOperation
+      summary: Add two numbers
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://us-central1-coe453-hw3-201953450.cloudfunctions.net/add
+  /sub:
+    post:
+      operationId: subOperation
+      summary: Subtract two numbers
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://us-central1-coe453-hw3-201953450.cloudfunctions.net/sub
+  /mul:
+    post:
+      operationId: mulOperation
+      summary: Multiply two numbers
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://us-central1-coe453-hw3-201953450.cloudfunctions.net/mul
+  /div:
+    post:
+      operationId: divOperation
+      summary: Divide two numbers
+      responses:
+        200:
+          description: OK
+      x-google-backend:
+        address: https://us-central1-coe453-hw3-201953450.cloudfunctions.net/div  
